@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Output files
+output/
+
+# Reference/test XML files (personal data)
+ref/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
