@@ -11,3 +11,8 @@ ref/
 __pycache__/
 *.pyc
 *.pyo
+
+# App build artifacts
+build/
+dist/
+*.spec

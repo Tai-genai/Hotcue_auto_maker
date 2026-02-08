@@ -93,6 +93,11 @@ TARGET_ENERGY_MIN = 6      # 処理対象のEnergy Level（最小）
 TARGET_ENERGY_MAX = 7      # 処理対象のEnergy Level（最大）
 ```
 
+### 設定の扱い
+- すべて実行時に可変（固定値ではない）
+- CLIから引数で指定可能
+- ローカルアプリUIからも指定可能（前回値を保存）
+
 ## 入出力
 
 ### 入力
@@ -105,6 +110,31 @@ TARGET_ENERGY_MAX = 7      # 処理対象のEnergy Level（最大）
 ```bash
 python hotcue_shifter.py input.xml output.xml
 ```
+
+```bash
+python hotcue_shifter.py input.xml output.xml \
+  --bpm-threshold 148 \
+  --offset-high-bpm 40 \
+  --offset-normal-bpm 24 \
+  --energy-min 5 \
+  --energy-max 7
+```
+
+## ローカルアプリ（macOS）
+
+### 開発起動
+```bash
+python3 -m pip install -r requirements.txt
+python3 hotcue_app.py
+```
+
+### 配布用appビルド
+```bash
+./build_mac_app.sh
+```
+
+出力先:
+- `dist/HotCueAutoMaker.app`
 
 ## 処理結果の例
 
